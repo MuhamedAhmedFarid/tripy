@@ -1,7 +1,9 @@
 const App = () => {
 
   return (
-    <div>Tripy</div>
+    <div>
+      <h1>Tripy</h1>
+    </div>
   )
 }
 
