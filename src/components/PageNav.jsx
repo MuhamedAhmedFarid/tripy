@@ -13,6 +13,7 @@ export default function PageNav() {
             <li>
                 <NavLink to='/products'>Product</NavLink>
             </li>
+         
         </ul>
     </nav>
   )
