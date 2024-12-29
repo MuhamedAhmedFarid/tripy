@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styles from './CityItem.module.css'
+import { useCities } from '../contexts/CitiesContext';
 const formatDate = (date) =>
     new Intl.DateTimeFormat("en", {
         day: "numeric",
@@ -9,11 +11,11 @@ const formatDate = (date) =>
     }).format(new Date(date));
 
 const CityItem = ({ city }) => {
-    console.log(city);
     const { cityName, emoji, date, id, position } = city
+    const { cityData } = useCities()    
     return (
         <li>
-            <Link className={styles.cityItem} to={`${id}?lat=${position.lat}&lng=${position.lng}`}>
+            <Link className={`${styles.cityItem} ${cityData.id === id ? styles['cityItem--active']: ''}`} to={`${id}?lat=${position.lat}&lng=${position.lng}`}>
                 <span className={styles.emoji}>{emoji}</span>
                 <h3 className={styles.name}>{cityName}</h3>
                 <time className={styles.date}>{formatDate(date)}</time>
@@ -22,5 +24,17 @@ const CityItem = ({ city }) => {
         </li>
     )
 }
+CityItem.propTypes = {
+    city: PropTypes.shape({
+        cityName: PropTypes.string.isRequired,
+        emoji: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+        position: PropTypes.shape({
+            lat: PropTypes.number.isRequired,
+            lng: PropTypes.number.isRequired,
+        }).isRequired,
+    }).isRequired,
+};
 
 export default CityItem
