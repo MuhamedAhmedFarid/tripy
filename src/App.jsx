@@ -16,6 +16,7 @@ const App = () => {
 
   return (
     <CitiesProvider>
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="*" element={<PageNotFount />} />
         </Routes>
       </BrowserRouter>
+
     </CitiesProvider>
 
   )

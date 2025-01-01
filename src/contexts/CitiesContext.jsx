@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 const CitiesContext = createContext();
 export const URL = 'http://localhost:3001';
 
+
 function CitiesProvider({ children }) {
     const [cities, setCities] = useState();
     const [isLoading, setIsLoading] = useState(false);
-     const [cityData, setCityData] = useState([])
+    const [cityData, setCityData] = useState([])
     useEffect(() => {
         async function fetchCities() {
             try {
