@@ -15,15 +15,16 @@ const formatDate = (date) =>
 
 function City() {
   const navigate = useNavigate();
-  const { id } = useParams()
-  const {getCity, cityData, isLoading} =  useCities()
+  const { id } = useParams();
+  const { getCity, cityData, isLoading } = useCities();
  
+  
   useEffect(() => {
-    getCity(id)
-  },[id])
+    getCity(id);
+  }, [id]);
   const { cityName, emoji, date, notes } = cityData;
-  if(isLoading) {
-    return <Spinner />
+  if (isLoading) {
+    return <Spinner />;
   }
   return (
     <div className={styles.city}>
@@ -58,11 +59,15 @@ function City() {
       </div>
 
       <div>
-      <Button type='back' onClick={(e) =>{ 
-                navigate(-1)
-                }}>&larr; Back</Button>
+        <Button
+          type="back"
+          onClick={(e) => {
+            navigate(-1);
+          }}
+        >
+          &larr; Back
+        </Button>
       </div>
-  
     </div>
   );
 }

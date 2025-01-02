@@ -10,31 +10,55 @@
         "lat": 38.727881642324164,
         "lng": -9.140900099907554
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
-      "cityName": "Madrid",
+      "id": "b6ba",
+      "cityName": "St Peter",
+      "country": "Jersey",
+      "emoji": "",
+      "date": "2024-12-29T23:16:00.000Z",
+      "notes": "Test",
+      "position": {
+        "lat": "49.2032427441791",
+        "lng": "-2.1643066406250004"
+      }
+    },
+    {
+      "id": "65a6",
+      "cityName": "Castello de la Plana",
       "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
+      "emoji": "",
+      "date": "2025-01-01T23:17:17.573Z",
+      "notes": "test",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
+        "lat": "39.99119388858183",
+        "lng": "-0.012531280517578127"
+      }
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "id": "d80d",
+      "cityName": "Castello de la Plana",
+      "country": "Spain",
+      "emoji": "",
+      "date": "2025-01-01T23:19:45.012Z",
+      "notes": "dsd",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
+        "lat": "39.987905879411656",
+        "lng": "0.006866455078125001"
+      }
+    },
+    {
+      "id": "74b0",
+      "cityName": "Castello de la Plana",
+      "country": "Spain",
+      "emoji": "",
+      "date": "2025-01-01T23:22:20.956Z",
+      "notes": "sdkfj",
+      "position": {
+        "lat": "40.02669430194513",
+        "lng": "-0.05287170410156251"
+      }
     }
   ]
 }

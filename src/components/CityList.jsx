@@ -4,7 +4,7 @@ import Spinner from './Spinner'
 import Message from './Message'
 import { useCities } from '../contexts/CitiesContext'
 const CityList = () => {
-    const {cities, isLoading} = useCities()
+    const {cities, isLoading, deleteCity} = useCities()
   
     if (isLoading) {
         return <Spinner />
@@ -12,6 +12,7 @@ const CityList = () => {
     if(!cities || cities.length === 0) {
         return <Message message="Add your first city by clicking on the map"/>
     }
+   
     return (
         <div className={styles.cityList}>
             {cities?.map((city) => <CityItem key={city.id} city={city} />)}
