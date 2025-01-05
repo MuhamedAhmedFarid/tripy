@@ -1,6 +1,6 @@
 import PageNav from "../components/PageNav"
 
-export const PageNotFount = () => {
+const PageNotFount = () => {
   return (
     <div>
       <PageNav />
@@ -8,3 +8,4 @@ export const PageNotFount = () => {
     </div>
   )
 }
+export default PageNotFount;

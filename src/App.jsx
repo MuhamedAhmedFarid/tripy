@@ -1,25 +1,37 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Product from "./pages/Product";
-import Pricing from "./pages/Pricing";
-import HomePage from "./pages/HomePage";
-import { PageNotFount } from "./pages/PageNotFount";
+import { lazy, Suspense } from "react";
+
 import "./index.css";
-import { AppPage } from "./pages/AppPage";
-import Login from "./pages/Login";
+
 import CityList from "./components/CityList";
 import CountriesList from "./components/CountriesList";
 import City from "./components/City";
 import Form from "./components/Form";
 import { CitiesProvider } from "./contexts/CitiesContext";
 import { AuthProvider } from "./contexts/FakeAuthContext";
+import { AppPage } from "./pages/AppPage";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import SpinnerFullPage from "./components/SpinnerFullPage";
+// import HomePage from "./pages/HomePage";
+// import Product from "./pages/Product";
+// import Pricing from "./pages/Pricing";
 
+// import Login from "./pages/Login";
+// import { PageNotFount } from "./pages/PageNotFount";
+
+const HomePage = lazy(() => import('./pages/HomePage'))
+const Product = lazy(() => import('./pages/Product'))
+const Pricing = lazy(() => import('./pages/Pricing'))
+const Login = lazy(() => import('./pages/Login'))
+const PageNotFount = lazy(() => import('./pages/PageNotFount'))
 const App = () => {
   return (
     <AuthProvider>
       <CitiesProvider>
         <BrowserRouter>
+        <Suspense fallback={<SpinnerFullPage />}>
           <Routes>
+         
             <Route path="/" element={<HomePage />} />
             <Route path="/products" element={<Product />} />
             <Route path="/Pricing" element={<Pricing />} />
@@ -39,7 +51,10 @@ const App = () => {
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<PageNotFount />} />
+
           </Routes>
+          </Suspense>
+
         </BrowserRouter>
       </CitiesProvider>
     </AuthProvider>
